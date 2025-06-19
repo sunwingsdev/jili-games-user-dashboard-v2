@@ -1,4 +1,5 @@
- 
+import { useState } from "react";
+import VideoModal from "../ApiPlan/VideoModal";
 
 const plansData = [
   {
@@ -32,9 +33,11 @@ const plansData = [
 ];
 
 const ApiPlan = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <div className="text-white px-4 ">
-      <h2 className="text-center text-lg bg-bgSecondary py-1 rounded-md">
+    <div className="text-white relative">
+      <h2 className="text-center text-lg bg-bgSecondary py-1 ">
         GGR-Plan Buy Now
       </h2>
 
@@ -44,34 +47,34 @@ const ApiPlan = () => {
           Click Here To See This{" "}
           <span className="text-blue-500 font-bold">Video Tutorial</span>
         </p>
-        <button className="bg-blue-700 hover:bg-opacity-60 px-3 py-1 rounded-lg mt-2">
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="bg-blue-700 hover:bg-opacity-60 px-3 py-1 rounded-lg mt-2"
+        >
           Video Tutorial !
         </button>
       </div>
 
-      <div className="mt-8 grid grid-cols-2 mx-auto justify-items-center w-[70%] ">
+      <div className="mt-8 grid grid-cols-2 mx-auto justify-items-center w-[70%]">
         {plansData.map((plan, index) => (
           <div
             key={index}
-            className="bg-bgSecondary w-fit rounded-2xl p-6 border-8 border-bgSecondary border-opacity-20 "
+            className="bg-bgSecondary w-fit rounded-2xl p-6 border-8 border-[#c20eb996] border-opacity-20"
           >
             <h3 className="text-center text-textYellow text-xl font-mono mb-1">{plan.type}</h3>
-            <p className="text-center text-black font-bold  bg-bgYellow text-xl rounded-full p-1 px-2  mb-4">{plan.price}</p>
+            <p className="text-center text-black font-bold bg-bgYellow text-xl rounded-full p-1 px-2 mb-4">{plan.price}</p>
 
             <ul className="space-y-2 pl-2">
-  {plan.features.map((feature, i) => (
-    <li
-      key={i}
-      className="flex items-center text-white text-[15px] leading-snug"
-    >
-      <span className="w-3 h-3 bg-white rounded-full mr-3 flex-shrink-0"></span>
-      {feature}
-    </li>
-  ))}
-</ul>
-
-
-
+              {plan.features.map((feature, i) => (
+                <li
+                  key={i}
+                  className="flex items-center text-white text-[15px] leading-snug"
+                >
+                  <span className="w-3 h-3 bg-white rounded-full mr-3 flex-shrink-0"></span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
 
             <div className="mt-6 flex justify-center">
               <button className="bg-bgRed hover:bg-opacity-60 px-4 py-1 rounded-full border border-dashed font-semibold transition">
@@ -81,6 +84,13 @@ const ApiPlan = () => {
           </div>
         ))}
       </div>
+
+      {/* Video Modal */}
+      <VideoModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with your actual video link
+      />
     </div>
   );
 };

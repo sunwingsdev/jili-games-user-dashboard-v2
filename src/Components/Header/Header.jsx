@@ -3,7 +3,7 @@ import { BiMessage } from "react-icons/bi";
 
 const Header = () => {
   return (
-    <header className="w-full bg-[#170132] shadow-sm px-4 py-[14px] flex items-center justify-between">
+    <header className="w-full bg-bgSidebar shadow-sm px-4 py-[14px] flex items-center justify-between">
       {/* Left: Search Bar */}
       <div className="flex items-center w-full max-w-sm">
         <div className="w-full flex">

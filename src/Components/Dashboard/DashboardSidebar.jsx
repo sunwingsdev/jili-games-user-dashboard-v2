@@ -69,7 +69,8 @@ const DashboardSidebar = ({ open, setOpen, menuItems }) => {
       <div
         className={`${
           open ? "w-64" : "w-16"
-        } hidden md:block   duration-300 h-screen fixed bg-primary-primaryColor `}
+        }   duration-300 fixed  bg-primary-primaryColor `}
+        
       >
         {/* Start Top collapse */}
         <div className={`bg-black h-[58px]  ${!open && ""}`}>
@@ -111,9 +112,9 @@ const DashboardSidebar = ({ open, setOpen, menuItems }) => {
 
       {/* Start Menu bar */}
       <div
-        className={` bg-bgSidebar overflow-y-auto fixed mt-[57px] hidden md:block pb-16 ${
+        className={` bg-bgSidebar overflow-y-auto fixed mt-[57px] hidden h-full md:block pb-16 ${
           open ? "w-64" : "w-16"
-        } text-sm text-white duration-300 font-semibold h-full scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-900`}
+        } text-sm text-white duration-300 font-semibold  scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-900`}
       >
         {/* Dynamic Menu Rendering */}
        {menuItems.map((item, index) => (
@@ -151,10 +152,10 @@ const DashboardSidebar = ({ open, setOpen, menuItems }) => {
             className={`py-2.5 border-b border-gray-700 pl-8 flex gap-2
               ${
                 location.pathname === subItem.to
-                  ? "text-textActiveMenu  bg-bgHoverSubMenu"
-                  : "text-white bg-bgSubMenu hover:bg-bgHoverSubMenuTwo"
+                  ? "text-textActiveMenu underline  bg-bgHoverSubMenu"
+                  : "text-white hover:underline bg-bgSubMenu hover:bg-bgHoverSubMenuTwo"
               }
-              hover:underline`}
+              `}
           >
             {subItem.label}
           </Link>

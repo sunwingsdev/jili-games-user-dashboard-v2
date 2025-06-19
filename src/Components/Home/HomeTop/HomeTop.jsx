@@ -30,7 +30,7 @@ const HomeTop = () => {
         {balancePlans.map((plan, index) => (
           <div
             key={index}
-            className="bg-bgSidebar border border-textPrimary rounded-xl p-4 shadow-2xl "
+            className="bg-bgSidebar border border-textPrimary rounded-xl pb-2  shadow-2xl "
           >
             {/* Dashed Circular USD Display */}
             <DashedCircleVerticalBars
@@ -42,7 +42,7 @@ const HomeTop = () => {
             <h3 className="text-center  font-bold text-textSecondary text-md   mb-2">
               {plan.type}
             </h3>
-            <p className="text-xs text-justify leading-snug">{plan.note}</p>
+            <p className="text-xs px-2 text-justify leading-snug">{plan.note}</p>
           </div>
         ))}
       </div>

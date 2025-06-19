@@ -13,6 +13,7 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { Outlet } from "react-router";
 import DashboardSidebar from "../Dashboard/DashboardSidebar";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const DashboardLayout = () => {
   useEffect(() => {
@@ -114,19 +115,20 @@ const DashboardLayout = () => {
   ];
 
   return (
-    <div className="flex bg-bgPrimary">
+    <div className="flex  bg-bgPrimary">
       <DashboardSidebar open={open} setOpen={setOpen} menuItems={menuItems} />
       <div
-        className={`flex-1 h-screen overflow-y-auto flex flex-col duration-300 ${
+        className={`flex-1 h-screen  overflow-y-auto flex flex-col duration-300 ${
           !open ? "md:pl-16 pr-6" : "md:pl-64 pr-6"
         }`}
       >
         <Header />
-        <div className={`h-screen ${
-          !open ? "ml-2 pr-0 pt-1 p-3" : "pt-1 "
+        <div className={` ${
+          !open ? "ml-2 pr-0 pt-0 p-3" : "pt-0 pb-3 "
         }`}>
           <Outlet context={{ submenus }} />
         </div>
+        <Footer/>
       </div>
     </div>
   );

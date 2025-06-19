@@ -11,6 +11,7 @@ export default {
       colors: {
         // Custom background colors
         bgPrimary: "#2a003f",
+        bgRedGradient: "#FF85A2",
         bgSecondary: "#c20eb996",
         bgSidebar: "#170132",
         bgSubMenu:"#410b5b",

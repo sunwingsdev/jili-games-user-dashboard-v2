@@ -16,16 +16,16 @@ const postpaidPlan = {
 const MySubscriptions = () => {
   return (
     <div className="text-white ">
-      <div className="text-lg font-bold flex justify-between bg-bgSecondary py-1 px-2 shadow-2xl rounded-md">
-        <h2 className="w-[55%] text-right">MY Subscriptions</h2>
+      <div className="text-lg font-bold flex justify-between bg-bgSecondary py-1 px-2 shadow-2xl ">
+        <h2 className="w-[58%] text-right">MY Subscriptions</h2>
         <h2>Left - 358 Days</h2>
       </div>
 
       <div className="text-[23px] flex flex-col items-center leading-tight font-sans text-[#f778ee] mt-4 space-y-1">
         <p>Dear Abir Hasan</p>
-        <p>Congratulations!</p>
+        <p>Congratulations !</p>
         <p className="text-white">
-          You have already subscribed to the{" "}
+          You have Already Subscribed to the{" "}
           <span className="text-textYellow font-bold">Postpaid Package</span>
         </p>
       </div>
