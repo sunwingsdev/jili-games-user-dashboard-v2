@@ -1,5 +1,6 @@
-import { useState } from "react";
+
 import VideoModal from "../ApiPlan/VideoModal";
+import { useOutletContext } from "react-router-dom";
 
 const plansData = [
   {
@@ -33,7 +34,7 @@ const plansData = [
 ];
 
 const ApiPlan = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { isModalOpen, setIsModalOpen } = useOutletContext();
 
   return (
     <div className="text-white relative">
@@ -47,11 +48,33 @@ const ApiPlan = () => {
           Click Here To See This{" "}
           <span className="text-blue-500 font-bold">Video Tutorial</span>
         </p>
+        
+
         <button
           onClick={() => setIsModalOpen(true)}
-          className="bg-blue-700 hover:bg-opacity-60 px-3 py-1 rounded-lg mt-2"
+          className="relative inline-flex items-center justify-center rounded-xl px-6 py-2.5
+    bg-gradient-to-r from-purple-600 via-pink-600 to-red-600
+    text-white font-bold text-lg shadow-2xl
+    transition transform duration-300 ease-in-out
+    hover:scale-105 hover:shadow-pink-500/60 active:scale-95 group"
         >
-          Video Tutorial !
+          <span className="relative z-10 flex items-center gap-3">
+            <svg
+              className="w-7 h-7 text-white
+        animate-[pulse_2.5s_ease-in-out_infinite] drop-shadow-lg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path d="M4 4l12 6-12 6V4z" />
+            </svg>
+            Play Tutorial
+          </span>
+
+          {/* Shine effect */}
+          <span
+            className="absolute inset-0 bg-white rounded-xl opacity-10 blur-sm
+    transition-opacity duration-500 ease-in-out group-hover:opacity-25"
+          ></span>
         </button>
       </div>
 
@@ -59,27 +82,46 @@ const ApiPlan = () => {
         {plansData.map((plan, index) => (
           <div
             key={index}
-            className="bg-bgSecondary w-fit rounded-2xl p-6 border-8 border-[#c20eb996] border-opacity-20"
+            className="relative bg-bgSecondary w-fit rounded-2xl p-6 group transition-transform duration-300 ease-in-out hover:scale-105  shadow-[0_0_25px_5px_rgba(192,14,185,0.3)] border border-pink-500"
           >
-            <h3 className="text-center text-textYellow text-xl font-mono mb-1">{plan.type}</h3>
-            <p className="text-center text-black font-bold bg-bgYellow text-xl rounded-full p-1 px-2 mb-4">{plan.price}</p>
+            {/* Constant glow layer */}
+            <div className="absolute inset-0 rounded-2xl border-2 border-purple-500 opacity-50 blur-sm pointer-events-none"></div>
+            <div className="absolute inset-0 rounded-2xl border border-pink-500 opacity-30 blur-md pointer-events-none"></div>
 
-            <ul className="space-y-2 pl-2">
-              {plan.features.map((feature, i) => (
-                <li
-                  key={i}
-                  className="flex items-center text-white text-[15px] leading-snug"
+            <div className="relative z-10">
+              <h3 className="text-center text-textYellow text-xl font-mono mb-1">
+                {plan.type}
+              </h3>
+              <p className="text-center text-black font-bold bg-bgYellow text-xl rounded-full p-1 px-2 mb-4">
+                {plan.price}
+              </p>
+
+              <ul className="space-y-2 pl-2">
+                {plan.features.map((feature, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center text-white text-[15px] leading-snug"
+                  >
+                    <span className="w-3 h-3 bg-white rounded-full mr-3 flex-shrink-0"></span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-6 flex justify-center">
+                <button
+                  className="relative bg-bgRed px-6 py-2 rounded-full border border-dashed font-semibold text-white
+      shadow-lg shadow-blue-500/40
+      transition duration-300 ease-in-out
+      hover:scale-105 hover:shadow-blue-500 active:scale-95
+      animate-bounce"
                 >
-                  <span className="w-3 h-3 bg-white rounded-full mr-3 flex-shrink-0"></span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
+                  {plan.buttonText}
 
-            <div className="mt-6 flex justify-center">
-              <button className="bg-bgRed hover:bg-opacity-60 px-4 py-1 rounded-full border border-dashed font-semibold transition">
-                {plan.buttonText}
-              </button>
+                  {/* Subtle shine overlay */}
+                  <span className="absolute inset-0 rounded-full bg-white opacity-5 blur-sm group-hover:opacity-10"></span>
+                </button>
+              </div>
             </div>
           </div>
         ))}

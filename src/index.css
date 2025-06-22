@@ -25,3 +25,43 @@
 .animate-fadeIn {
   animation: fadeIn 0.4s ease-out both;
 }
+
+
+ /* deposit tabs */
+@keyframes activeBorder {
+  0% {
+    border-color: #FF0000;
+    box-shadow: 0 0 10px #FF0000;
+  }
+  50% {
+    border-color: #7e22ce;
+    box-shadow: 0 0 15px #7e22ce;
+  }
+  100% {
+    border-color: #FF0000;
+    box-shadow: 0 0 10px #FF0000;
+  }
+}
+
+.animate-activeBorder {
+  animation: activeBorder 1.5s infinite ease-in-out;
+}
+
+
+/* eye button animation */
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 14px rgba(59, 130, 246, 0.9);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2.5s infinite;
+}
+
+

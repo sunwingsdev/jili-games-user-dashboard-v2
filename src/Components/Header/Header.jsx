@@ -1,9 +1,11 @@
 import { FaSearch, FaEnvelope, FaCog, FaUserCircle } from "react-icons/fa";
 import { BiMessage } from "react-icons/bi";
 
-const Header = () => {
+const Header = ({open}) => {
   return (
-    <header className="w-full bg-bgSidebar shadow-sm px-4 py-[14px] flex items-center justify-between">
+    <header className={`fixed top-0  ${
+          !open ? "w-[94%] " : "w-[80%]"
+        }   bg-bgSidebar z-30 shadow-sm px-4  py-[14px]  flex items-center justify-between`}>
       {/* Left: Search Bar */}
       <div className="flex items-center w-full max-w-sm">
         <div className="w-full flex">
@@ -40,10 +42,22 @@ const Header = () => {
       </div>
 
       {/* Profile icon with green dot */}
-      <div className="relative">
-        <FaUserCircle className="cursor-pointer text-white text-3xl" />
-        <span className="absolute bottom-0 left-0 w-2 h-2 bg-green-500 rounded-full"></span>
-      </div>
+      <div className="flex items-center gap-2">
+  {/* User icon with online indicator */}
+  <div className="relative">
+    <FaUserCircle className="cursor-pointer text-white text-3xl" />
+    <span className="absolute bottom-0 left-0 w-2 h-2 bg-green-500 rounded-full border border-white"></span>
+  </div>
+
+  {/* Logout button */}
+  <button
+    onClick={() => console.log("Logging out...")}
+    className="px-3 py-1 text-sm rounded-full bg-bgRed hover:bg-red-700 text-white font-semibold shadow transition duration-300"
+  >
+    Log Out
+  </button>
+</div>
+
     </header>
   );
 };

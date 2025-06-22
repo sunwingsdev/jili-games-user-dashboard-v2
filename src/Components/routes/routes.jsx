@@ -5,10 +5,12 @@ import Home from '../Pages/Home';
 
 
 import DashboardLayout from '../Layouts/DashboardLayout';
-import AllAgents from '../Pages/AllAgents';
+// import AllAgents from '../Pages/AllAgents';
 import GgrReport from '../Pages/GgrReport';
 import ApiPlan from '../Pages/ApiPlan';
 import MySubscriptions from '../Pages/MySubscriptions';
+import DepositNow from '../Pages/Recharge/DepositNow';
+import RechargeHistory from '../Pages/Recharge/RechargeHistory';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -39,10 +41,20 @@ const router = createBrowserRouter([
         element: <MySubscriptions />,
         
       },
-      // subMenu
+      //recharge subMenu
+      // {
+      //   path: '/agents',
+      //   element: <AllAgents />,
+        
+      // },
       {
-        path: '/agents',
-        element: <AllAgents />,
+        path: '/recharge/deposit',
+        element: <DepositNow />,
+        
+      },
+      {
+        path: '/recharge/history',
+        element: <RechargeHistory />,
         
       },
       

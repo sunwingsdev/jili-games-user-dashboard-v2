@@ -30,7 +30,7 @@ const VideoModal = ({ isOpen, onClose, videoUrl }) => {
         className="relative w-full max-w-4xl border border-textPrimary bg-bgSecondary rounded-xl shadow-lg overflow-hidden"
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-3 bg-bgSidebar border-b border-gray-700">
+        <div className="flex items-cente justify-between px-5 py-3 bg-bgSidebar border-b border-gray-700">
           <h2 className="text-lg font-semibold text-white tracking-wide">
             🎬 Video Tutorial
           </h2>
