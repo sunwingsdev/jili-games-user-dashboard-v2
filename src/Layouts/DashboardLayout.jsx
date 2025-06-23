@@ -13,11 +13,12 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { MdPayment } from "react-icons/md";
 import { RiWallet3Fill } from "react-icons/ri";
 import { BiHistory } from "react-icons/bi";
+import { FaPlusCircle, FaListAlt } from "react-icons/fa";
 
 import { Outlet } from "react-router";
-import DashboardSidebar from "../Dashboard/DashboardSidebar";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import DashboardSidebar from "../Components/Dashboard/DashboardSidebar";
+import Header from "../Components/Header/Header";
+import Footer from "../Components/Footer/Footer";
 
 const DashboardLayout = () => {
   useEffect(() => {
@@ -73,24 +74,34 @@ const DashboardLayout = () => {
     {
       label: "Api Center",
       icon: <MdApi />,
-      submenu: [
-        { label: "All Agents", to: "/agents" },
-        { label: "Active Games" },
-        { label: "Inactive Games" },
-      ],
+      to:"/api-center"
+      // submenu: [
+      //   { label: "All Agents", to: "/agents" },
+      //   { label: "Active Games" },
+      //   { label: "Inactive Games" },
+      // ],
     },
     {
-      label: "White Lebel",
+      label: "White Level",
       icon: <RiVipDiamondLine />,
       submenu: [
-        { label: "Add Games", to: "/dashboard/addGames" },
-        { label: "Sprots Live TV", to: "/dashboard/gamesApi/sports-live-tv" },
-      ],
+    {
+      label: "White Level Create",
+      to: "/white/create",
+      icon: <FaPlusCircle className="text-base" />, // Create icon
     },
     {
-      label: "game Center",
+      label: "White Level List",
+      to: "/white/list",
+      icon: <FaListAlt className="text-base" />, // List icon
+    },
+  ],
+    },
+    {
+      label: "Game Center",
       icon: <GiGamepad />,
-      submenu: [{ label: "Happy Hours" }, { label: "Deposit Bonuses" }],
+      to:"/game"
+      // submenu: [{ label: "Happy Hours" }, { label: "Deposit Bonuses" }],
     },
     {
       label: "Notice & Update",

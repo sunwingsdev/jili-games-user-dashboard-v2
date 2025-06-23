@@ -34,8 +34,10 @@ const CommonDepositForm = ({
   return (
     <div className="text-black space-y-2">
       {/* Title with YouTube icon */}
-      <div className={`flex justify-between rounded-lg ${bgColor} items-center py-1 pr-2`}>
-        <h2 className="text-2xl w-[60%] text-right font-bold uppercase " >
+      <div
+        className={`flex justify-between rounded-lg ${bgColor} items-center py-1 pr-2`}
+      >
+        <h2 className="text-2xl w-[60%] text-right font-bold uppercase ">
           {title}
         </h2>
         {/* style={{ color: titleColor }} */}
@@ -54,8 +56,8 @@ const CommonDepositForm = ({
             {idLabel}: <span style={{ color: titleColor }}>{idValue}</span>
           </span>
           <button
-  onClick={handleCopy}
-  className={`
+            onClick={handleCopy}
+            className={`
     relative px-3 py-1 font-bold text-xs text-white ${bgColor}
     rounded-full shadow-md
     hover:bg-opacity-80 hover:scale-105 transition-transform duration-300 ease-in-out
@@ -63,29 +65,32 @@ const CommonDepositForm = ({
     animate-pulse
     group
   `}
->
-  Copy
-
-  {/* Tooltip on hover */}
-  <span className="
+          >
+            Copy
+            {/* Tooltip on hover */}
+            <span
+              className="
     absolute bottom-full mb-1 left-1/2 -translate-x-1/2
     bg-black bg-opacity-80 text-white text-[10px] px-2 py-0.5 rounded
     opacity-0 group-hover:opacity-100 transition-opacity duration-200
     whitespace-nowrap
-  ">
-    Click to copy
-  </span>
-</button>
-
+  "
+            >
+              Click to copy
+            </span>
+          </button>
         </div>
-        <p className="text-sm text-textRed text-center">{noteText}</p>
+        <p className="text-sm text-white text-center">{noteText}</p>
       </div>
 
       {/* Form */}
       <div className="flex justify-center text-white">
         <div className="w-full max-w-md space-y-4">
           <div className="flex flex-col">
-            <label className="block text-sm mb-1 font-semibold" style={{ color: titleColor }}>
+            <label
+              className="block text-sm mb-1 font-semibold"
+              style={{ color: titleColor }}
+            >
               * Deposit Amount
             </label>
             <input
@@ -102,7 +107,10 @@ const CommonDepositForm = ({
           </div>
 
           <div className="flex flex-col">
-            <label className="block text-sm mb-1 font-semibold" style={{ color: titleColor }}>
+            <label
+              className="block text-sm mb-1 font-semibold"
+              style={{ color: titleColor }}
+            >
               * {inputIdLabel}
             </label>
             <input
@@ -119,7 +127,10 @@ const CommonDepositForm = ({
           </div>
 
           <div className="flex flex-col">
-            <label className="block text-sm mb-1 font-semibold" style={{ color: titleColor }}>
+            <label
+              className="block text-sm mb-1 font-semibold"
+              style={{ color: titleColor }}
+            >
               * Upload Payment Confirm Screenshot
             </label>
             <div className="relative w-full max-w-md">

@@ -1,4 +1,5 @@
-import DepositTabs from "../../Recharge/DepositNow/DepositTabs";
+import DepositTabs from "../../Components/Recharge/DepositNow/DepositTabs";
+
 
 const DepositNow = () => {
   return (

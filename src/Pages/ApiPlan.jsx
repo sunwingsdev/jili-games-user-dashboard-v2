@@ -1,6 +1,7 @@
 
-import VideoModal from "../ApiPlan/VideoModal";
+
 import { useOutletContext } from "react-router-dom";
+import VideoModal from "../Components/ApiPlan/VideoModal";
 
 const plansData = [
   {

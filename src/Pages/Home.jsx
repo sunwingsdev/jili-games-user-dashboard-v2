@@ -1,9 +1,11 @@
 
 
-import FlowChartPlayer from "../Home/FlowchartPlayer/FlowChartPlayer";
-import HomeBars from "../Home/HomeBars/HomeBars"; 
-import HomeLast from "../Home/HomeLast/HomeLast";
-import HomeTop from "../Home/HomeTop/HomeTop";
+
+import FlowChartPlayer from "../Components/Home/FlowchartPlayer/FlowChartPlayer";
+import HomeBars from "../Components/Home/HomeBars/HomeBars";
+import HomeLast from "../Components/Home/HomeLast/HomeLast";
+import HomeTop from "../Components/Home/HomeTop/HomeTop";
+
 
 
 const Home = () => {

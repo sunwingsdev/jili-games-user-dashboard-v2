@@ -65,3 +65,14 @@
 }
 
 
+@keyframes pulseShadow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.6);
+  }
+}
+
+
+
